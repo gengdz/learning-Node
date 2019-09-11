@@ -3,10 +3,14 @@ const http = require('http')
 const server = http.createServer()
 
 // 接收请求 --> 处理请求 --> 发送响应
-server.on('request', (resquest,response) => {
-  console.log(`客户端发送的请求地址是：${resquest.url}`)
-  response.write('hello   ')
-  response.write('node.js')
+server.on('request', (request, response) => {
+  const requestUrl = request.url
+  if (requestUrl === '/login') {
+    response.write('login')
+  } else {
+    response.write('hello   ')
+    response.write('node.js')
+  }
   response.end()
 })
 
