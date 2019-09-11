@@ -1,0 +1,16 @@
+{
+  "name": "learning-nodejs",
+  "version": "0.0.1",
+  "description": "a demo of nodejs",
+  "repository": "https://github.com/gengdz/learning-Node.git",
+  "author": "gengdz",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-import": "^1.12.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.26.0"
+  }
+}
