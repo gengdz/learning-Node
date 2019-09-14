@@ -56,4 +56,5 @@ http.createServer((req, res) => {
 })
   .listen(3000, () => {
     console.log('runnning')
+    console.log('热启动了')
   })

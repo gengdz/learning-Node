@@ -1,0 +1,46 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "张三",
+      "gender": 0,
+      "age": 18,
+      "hobbies": "吃饭、睡觉"
+    },
+    {
+      "id": 2,
+      "name": "张三",
+      "gender": 0,
+      "age": 18,
+      "hobbies": "吃饭、睡觉"
+    },
+    {
+      "id": 3,
+      "name": "张三",
+      "gender": 0,
+      "age": 18,
+      "hobbies": "吃饭、睡觉"
+    },
+    {
+      "id": 4,
+      "name": "张三",
+      "gender": 0,
+      "age": 18,
+      "hobbies": "吃饭、睡觉"
+    },
+    {
+      "name": "耿德洲",
+      "gender": "0",
+      "age": "18",
+      "hobbies": "看书、睡觉asdfa",
+      "id": 5
+    },
+    {
+      "name": "ddddd",
+      "gender": "0",
+      "age": "1",
+      "hobbies": "ddd",
+      "id": 8
+    }
+  ]
+}
