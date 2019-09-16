@@ -11,7 +11,7 @@
 
 const fs = require('fs')
 
-const pReadFile = (url) => {
+const pReadFile = url => {
   return new Promise((resolve, reject) => {
     fs.readFile(url, 'utf8', (err, data) => {
       if (err) {
@@ -24,15 +24,15 @@ const pReadFile = (url) => {
 }
 
 pReadFile('../a.txt')
-  .then((data) => {
+  .then(data => {
     console.log(data)
     return pReadFile('../b.txt')
   })
-  .then((data) => {
+  .then(data => {
     console.log(data)
     return pReadFile('../c.txt')
   })
-  .then((data) => {
+  .then(data => {
     console.log(data)
   })
   .catch(err => console.log(err))

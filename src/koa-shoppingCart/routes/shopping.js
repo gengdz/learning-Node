@@ -4,12 +4,6 @@ const Cart = require('../models/Cart')
 
 const router = new Router()
 
-// 测试
-router.get('/test', async ctx => {
-  ctx.status = 200
-  ctx.body = { statusMessage: 'shopping works' }
-})
-
 router.get('/page', async ctx => {
   const products = await Product.find()
   ctx.body = products

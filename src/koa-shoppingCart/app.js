@@ -3,18 +3,18 @@ const Router = require('koa-router')
 const bodyparser = require('koa-bodyparser')
 
 const db = require('./config/db')
-const shooping = require('./routes/shooping')
+const shopping = require('./routes/shopping')
+
+// 连接数据库
+db()
 
 // 实例化
 const app = new Koa()
 const router = new Router()
 
 // 挂载路由
-// router.use('/shopping', shooping)
-router.use(shooping)
-
-// 连接数据库
-db()
+// router.use('/shopping', shopping)
+router.use(shopping)
 
 // 使用bodyparser解析post的body,增强app的能力
 app.use(bodyparser())
