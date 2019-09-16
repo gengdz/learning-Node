@@ -1,12 +1,27 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const router = require('./routes/cart')
+const Koa = require('koa')
+const Router = require('koa-router')
+const bodyparser = require('koa-bodyparser')
 
-const app = express()
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-app.use(router)
+const db = require('./config/db')
+const shooping = require('./routes/shooping')
 
-app.listen(3000,() => {
+// 实例化
+const app = new Koa()
+const router = new Router()
+
+// 挂载路由
+// router.use('/shopping', shooping)
+router.use(shooping)
+
+// 连接数据库
+db()
+
+// 使用bodyparser解析post的body,增强app的能力
+app.use(bodyparser())
+
+// 配置路由
+app.use(router.routes()).use(router.allowedMethods())
+
+app.listen(3000, () => {
   console.log('购物车node服务启动在了3000端口')
 })

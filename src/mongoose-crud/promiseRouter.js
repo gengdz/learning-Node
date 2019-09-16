@@ -4,7 +4,7 @@
  *    （请求类型+url地址） --> 转到相应的处理函数
  */
 const express = require('express')
-const Student = require('./studentServer')
+const Student = require('./Student')
 
 const router = express.Router()
 

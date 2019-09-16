@@ -4,7 +4,9 @@
  */
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/students', { useNewUrlParser: true, useUnifiedTopology: true }, err => {
+mongoose.connect('mongodb://localhost/students', {
+  useNewUrlParser: true, useUnifiedTopology: true
+}, err => {
   if (err) return console.log('Connection Error:' + err)
   console.log('Connection success!')
 })
@@ -16,7 +18,7 @@ const userSchema = new mongoose.Schema({
   },
   gender: {
     type: Number,
-    enum: [0,1],
+    enum: [0, 1],
     default: 0,
     required: true
   },
@@ -24,4 +26,4 @@ const userSchema = new mongoose.Schema({
   hobbies: String
 })
 
-module.exports =  mongoose.model('Student', userSchema)
+module.exports = mongoose.model('Student', userSchema)
