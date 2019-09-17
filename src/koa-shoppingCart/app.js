@@ -1,5 +1,7 @@
 const Koa = require('koa')
 const Router = require('koa-router')
+const cors = require('koa-cors');
+
 const bodyparser = require('koa-bodyparser')
 
 const db = require('./config/db')
@@ -13,11 +15,14 @@ const app = new Koa()
 const router = new Router()
 
 // 挂载路由
-// router.use('/shopping', shopping)
-router.use(shopping)
+router.use('/shopping', shopping)
+// router.use(shopping)
 
 // 使用bodyparser解析post的body,增强app的能力
 app.use(bodyparser())
+
+// 设置跨域
+app.use(cors())
 
 // 配置路由
 app.use(router.routes()).use(router.allowedMethods())

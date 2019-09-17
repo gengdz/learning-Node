@@ -6,7 +6,16 @@ const router = new Router()
 
 router.get('/page', async ctx => {
   const products = await Product.find()
-  ctx.body = products
+  const data = {
+    list: products,
+    pagination: {
+      page: 1,
+      size: 10,
+      current: 1
+    }
+  }
+  ctx.status = 200
+  ctx.body = { data,statusCode: "0", statusMessage: "Success" }
 })
 
 module.exports = router.routes()
