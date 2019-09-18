@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 
 const CartSchema = new mongoose.Schema({
-  productId: String,
-  quantity: Number,
-  totalPrice: Number
+  pid: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+  pcount: Number,
 })
 
 module.exports = mongoose.model('Cart', CartSchema)
